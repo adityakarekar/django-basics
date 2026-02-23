@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#1 Template basics</title>
+  </head>
+  <body>
+    <h1>Template Basics</h1>
+
+    <!-- Accesing Single variable -->
+    <p>Name: {{name}}</p>
+    <p>Age: {{age}}</p>
+
+    <!-- accesing list items -->
+    <h2>Skills</h2>
+    <!-- {{skill}} -->
+    <!-- second way -->
+    {%for s in skill%}
+    <li>{{s}}</li>
+    {%endfor%}
+
+    <!-- Accesing object values of a class -->
+    <h2>User Information</h2>
+    <p>User Name: {{user.name}}</p>
+    <p>User Age: {{user.age}}</p>
+
+    <!-- Accesing dictionary values -->
+    <h2>Blog Info</h2>
+    <p>Blog title: {{blog.title}}</p>
+    <p>Blog content: {{blog.content}}</p>
+    <p>Blog content: {{blog.content|safe}}</p>
+    <p>Blog created_at: {{blog.created_at}}</p>
+
+    <!-- Accesing default values -->
+    <h2>Default values</h2>
+    <p>Default when not none: {{empty_value|default:"NO NONE PROVIDED"}}</p>
+    <p>Default when none: {{empty_value|default_if_none:"NONE PROVIDED"}}</p>
+  </body>
+</html>
