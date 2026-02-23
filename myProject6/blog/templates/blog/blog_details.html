@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Template #2</title>
-</head>
-<body>
+  </head>
+  <body>
     <h2>Title types</h2>
     <p>Title: {{post.title}}</p>
     <p>Title lower: {{post.title|lower}}</p>
@@ -14,5 +14,31 @@
     <p>Title Title Casing: {{post.title|title}}</p>
     <p>Title Truncate first 10 chars: {{post.title|truncatechars:10}}</p>
     <p>Title Truncate first 1 word: {{post.title|truncatewords:1}}</p>
-</body>
+
+    <!-- Addition demo in django -->
+    <p><b>Original price (+5): </b>{{post.price|add:5}}</p>
+
+    {%if post.number|divisibleby:2%}
+    <p>{{post.number}} is divisible by 2</p>
+
+    {%else%}
+    <p>{{post.number}} is not divisble by 2</p>
+    {%endif%} {% comment %} List filter demo {% endcomment %}
+
+    <b>Tags First: </b>
+    <p>{{post.tags|first}}</p>
+
+    <b>Tags Last: </b>
+    <p>{{post.tags|last}}</p>
+
+    <b>Tags joined together by ,</b>
+    <p>{{post.tags|join:""}}</p>
+
+    <b>Tags Length: </b>
+    <p>{{post.tags|length}}</p>
+
+    {% comment %} Yes no and Maybe demo {% endcomment %}
+
+    <h2>Available Author?: {{post.author|yesno:"Yes,No,Maybe"}}</h2>
+  </body>
 </html>
