@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template #2</title>
+</head>
+<body>
+    <h2>Title types</h2>
+    <p>Title: {{post.title}}</p>
+    <p>Title lower: {{post.title|lower}}</p>
+    <p>Title UPPER: {{post.title|upper}}</p>
+    <p>Title Capital Casing: {{post.title|capfirst}}</p>
+    <p>Title Title Casing: {{post.title|title}}</p>
+    <p>Title Truncate first 10 chars: {{post.title|truncatechars:10}}</p>
+    <p>Title Truncate first 1 word: {{post.title|truncatewords:1}}</p>
+</body>
+</html>
