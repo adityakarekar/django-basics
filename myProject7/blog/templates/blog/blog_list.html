@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>#3 Template</title>
+  </head>
+  <body>
+    <h1>Blog List</h1>
+    <p>{{today}}</p>
+
+    <!-- if else demo -->
+    {% if blogs.0.is_featured %}
+    <p>Featured blog: {{blogs.0.title}}</p>
+    {%else%}
+    <p>Normal blog {{blogs.0.title}}</p>
+    {%endif%}
+
+    <!-- for loop demo -->
+
+    {%for blog in blogs%}
+
+    <li>{{forloop.counter}}. {{blog.title}} - {{blog.author}}</li>
+
+    {%empty%}
+    <li>No data</li>
+    {%endfor%}
+
+    <!-- with tag demo assings variables and get thier resp properties -->
+    {%with total_blogs=blogs|length%} total blog length: {{total_blogs}}
+    {%endwith%}
+
+    <!-- first of demo -->
+
+    <h2>Author: {%firstof blog.1.author "Unknown"%}</h2>
+
+    <!-- verbatim: Ingonres  as varaibales and treats them as printable text -->
+
+    {%verbatim%}
+        <p>Author: {{blog.1.author}}</p>
+    {%endverbatim%}
+
+    <!-- auto escaping prevents cross site scripting attacks -->
+     <p>default autoescape on: {{html_code}}</p>
+     <p>default autoescape off: {{html_code|safe}}</p>
+  </body>
+</html>
