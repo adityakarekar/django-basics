@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Hello World</h1>
+    </header>
+
+    <main>
+        <section>
+            <p>This is a dummy HTML boilerplate.</p>
+        </section>
+    </main>
+
+    <form action="{% url 'submit_form'%}" method="post">
+        {% csrf_token %}
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" required/>
+
+        <hr/>
+
+
+        <label for="name">Message: </label>
+        <input type="text" id="message" name="message" required/>
+
+        <button type="submit">Submit Data</button>
+    </form>
+
+    <footer>
+        <p>© 2026 Your Name</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="script.js"></script>
+</body>
+</html>
